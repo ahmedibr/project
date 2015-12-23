@@ -1,0 +1,58 @@
+<DOCTYPE!>
+<html>
+    <head>
+        <title> inscription</title>
+        <link  rel="stylesheet" href="essai.css">
+       
+        <script>
+        
+            function verif()
+             {var a=document.getElementById("login");
+                 var b=document.getElementById("pass");
+          
+         if (!a.value && !b.value)  
+              { alert ('Login et mot de passe sont absents');
+               }
+         else 
+          { if (!a.value)
+              { 
+            alert('Login absent');
+               }
+         
+          
+          if (!b.value)
+            {alert('Mot de passe absent');}
+             
+             else{
+                 
+           
+             document.getElementById('form_inscrire').action="/connexion.php/inscrire";
+              
+     
+             }}
+       }
+    
+    
+        </script>
+         </head>
+<body>
+    <form id="form_inscrire" method="post" action="" onsubmit="verif()">
+        <br>
+        <br>
+        <h2> Inscription</h2>
+     <table> 
+     
+     <tr><td>Login:*</td> <td> <input id="login" type="texte" name="login"  > </td> </tr>
+        <br/>
+       <tr><td> Mot de passe:*</td><td><input id="pass" type="password" name="motdepasse"> </td></tr> 
+       </table>
+        <br/>
+        <br/>
+         <input id="con" type="submit" value="S'inscrire"></td> </tr>
+         
+        </table>
+        
+        
+    </form>
+</body>
+</html>

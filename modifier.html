@@ -1,0 +1,58 @@
+<DOCTYPE!>
+<html>
+    <head>
+        <title> modifier</title>
+           <link  rel="stylesheet" href="essai.css">
+         <script>
+
+  function verif_c()
+        {var a=document.getElementById("titre");
+        if (!a.value)
+        { document.getElementById("titre_err").innerHTML="titre absent ";}
+         
+           var b=document.getElementById("date");
+            if (!b.value)
+            {document.getElementById("date_err").innerHTML="date absent";}
+        var c=document.getElementById("heure");
+            if (!b.value)
+               {document.getElementById("heure_err").innerHTML="heure absent";}
+          
+            
+        return false;}  
+        
+  function verif_date()
+  { var date=document.getElementById('date');
+     var regex = /^[1-9][0-9]-[1-9]|[10-12]-[0-9]{4}$/;
+     var d =date.value;
+   var test = regex.test(d);
+   if(!test)
+    alert('veuillez saisir la date sous cette forme jj-mm-aaaa');
+  }
+  
+    function verif_heure()
+  { var heure=document.getElementById('heure');
+  
+     var regex = /^[1-9]|[10-23]:[00|30]$/;
+     var h=heure.value;
+      var test = regex.test(h);
+   if(!test)
+    alert('veuillez saisir l\'heure sous cette forme hh:mm');
+  }
+</script>
+    </head>
+<body>
+   
+    <div id='form_m'>
+    <form method="post" action="/connexion.php/modifier" onsubmit="verif_c()" >
+     <table> 
+     <tr><td>le nouveau titre:</td> <td> <input id="titre" type="texte" name="titre" required='required'><div id="titre_err"></div> </td> </tr>
+        <br/>
+       <tr><td> la nouvelle date:</td><td><input id="date" type="text" name="date" required='required' placeholder="25-2-2015" onblur="verif_date()"> <div id="date_err"></div></td></tr>
+        <br/>
+        <tr><td> la nouvelle heure:</td><td><input id="heure" type="heure" name="heure" required='required' placeholder="12:00" onblur="verif_heure()"> <div id="heure_err" ></div></td></tr>
+        <tr><td colspan=2 ><input  id='mod' type="submit" value="valider"></td></tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>

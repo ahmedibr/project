@@ -1,0 +1,44 @@
+<DOCTYPE!>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    <title>connexion admin</title>
+
+    
+     <link  rel="stylesheet" href="essai.css">
+    
+<script>
+ function verif ()
+        {var a=document.getElementById("login");
+        if (!a.value)
+        { document.getElementById("login_erreur").innerHTML="Login absent ";}
+         
+           var b=document.getElementById("pass");
+            if (!b.value)
+            {document.getElementById("pass_erreur").innerHTML="Mot de passe absent";}
+        
+        return false;}
+    
+    
+</script>
+   
+        <title> connexion</title>
+        
+    </head>
+<body>
+
+    <form  id="form_login" method="GET" action="/connexion.php/signin_admin" onsubmit="verif()" >
+     <div id="bienvenue">Authentification</div>
+     <table>
+     <tr><td> Login:</td> <td> <input id="login" type="texte" name="login" ><div id="login_erreur"></div> </td> </tr>
+        <br/>
+       <tr><td> Mot de passe:</td><td><input id="pass" type="password" name="motdepasse"  > <div id="pass_erreur"></div></td></tr>
+        <br/><br/><br/>
+        <tr><td colspan=2> <br/><input  id='con' type="submit" value="connexion"></td> </tr>
+       
+        </table>
+    </form>
+ 
+    
+</body>
+</html>

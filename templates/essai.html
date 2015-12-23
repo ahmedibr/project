@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+    <head>
+         <meta charset="utf-8"/>
+   
+    <title>Calendrier</title>
+   
+
+   <script type="text/javascript">
+       
+      var login='{{ login }}';
+     
+      
+   </script>
+        
+        <link  rel="stylesheet" href="/essai.css">
+          <script type="text/javascript" src="/jquery.js"></script>
+        
+      <title> calendrier</title>
+      
+    </head>
+    
+    <body>
+ <div id="tab"> <script type="text/javascript" src='/essai.js'></script></div>
+    
+     <div id="connexion">
+   
+   
+         {% if login !=null %}
+           <a href='/connexion.php/deconnexion'>Deconnexion</a>
+         {% else %}
+           <a href='/login.html'>Se connecter</a>
+         {% endif %}
+    </div>
+     <div id='bienvenue'>bienvenue {{ login }}</div>
+    </form>
+    
+             <div id="calendarwindow" style="display:none">
+                 <div id='X'> <input type="button"  name="button" value="X" onclick="quit()"></div>
+                  <form method="post"action="/connexion.php/evenement" >
+                     <br>&nbsp titre de l'évenement: <br><input type="text" name="titre"><br>
+                     
+                     <input type="hidden" name="date" id="date" value=""> <br>
+                    
+                     <input type="hidden" name="heure" id="heure" value=""><br>
+                    
+                     <input type="hidden" name="createur" id="createur" value=""><br>
+                     
+                    <input type="submit" name="button" value="ajouter">
+                   
+                    <input type="submit" name="button" value="modifier">
+                    
+                     <input type="submit" name="button"value="supprimer">
+                     
+                    
+                  </form>                                                                 
+            </div>
+          <div id="calendarFrame">
+             <div id="calendarHeader">
+                 <div id="calendarPrev"><</div>
+                 <div id="calendarMonthYear"></div>
+                 <div id="calendarNext">></div>
+                    <br class="clear">
+              </div> 
+             <div id="calendarWeekDaysBar"></div>
+               
+             <div id="calendarBody" onclick="v()"></div>
+             
+           
+          </div>
+    
+     
+   </body>
+ </html>
+      
+      
+      
+      
